@@ -1,7 +1,11 @@
 package paquete1;
 
 public aspect MyAspect {
-	before(): execution(* *.test()){
-        System.out.println("Aspecto");
-    }
+	
+	pointcut change(String x): call(void accion(String)) && args(x);
+	
+	after(String x):change(x){
+		System.out.println(x);
+		
+	}
 }

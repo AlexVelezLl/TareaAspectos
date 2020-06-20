@@ -1,7 +1,12 @@
 package paquete1;
 
+import javafx.scene.paint.Color;
+
 public aspect MyAspect {
-	before(): execution(* *.test()){
-        System.out.println("Aspecto");
-    }
+	
+	pointcut change(Color x): call(void notificar(Color)) && args(x);
+	
+	after(Color x):change(x){
+		System.out.println("El color ha sido llamada a "+x.toString());
+	}
 }

@@ -29,6 +29,7 @@ public class HelloWorld extends Application{
      */
     public static void main(String[] args) {
         Persona p = new Persona();
+        p.accion("juan");
         p.test();
         launch(args);
     }

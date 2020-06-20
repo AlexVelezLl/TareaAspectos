@@ -1,5 +1,7 @@
 package paquete1;
 
+import java.awt.Color;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -28,6 +30,9 @@ public class HelloWorld extends Application{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    	Color c=Color.red;
+    	
+    	
         Persona p = new Persona();
         p.accion("juan");
         p.test();

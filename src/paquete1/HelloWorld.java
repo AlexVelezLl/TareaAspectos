@@ -29,7 +29,6 @@ public class HelloWorld extends Application{
         root.agregarBoton(b3, 10, 100);  
         b1.getBoton().setOnMouseClicked((e)->{
         	root.update(b1.getColor());
-        	System.out.print("PRUEBA");
         });
         b2.getBoton().setOnMouseClicked((e)->{
         	root.update(b2.getColor());

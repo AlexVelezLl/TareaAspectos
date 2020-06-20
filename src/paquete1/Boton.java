@@ -3,14 +3,16 @@ package paquete1;
 import java.util.ArrayList;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 public class Boton implements SujetoObservable {
 	private Button b;
-	private Color color;
+	private String color;
 	private ArrayList<Observador> observadores;
 	
-	public Boton(Color color) {
+	public Boton(String color) {
 		this.color=color;
 		this.observadores=new ArrayList<Observador>();
 		this.b= new Button(color.toString());
@@ -32,11 +34,11 @@ public class Boton implements SujetoObservable {
 	public Button getBoton(){
 		return this.b;
 	}
-	public Color getColor() {
+	public String getColor() {
 		return this.color;
 	}
 	
-	public void setColor(Color color) {
+	public void setColor(String color) {
 		this.color=color;
 		this.b.setText(color.toString());
 	}

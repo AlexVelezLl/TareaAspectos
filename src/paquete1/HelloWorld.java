@@ -16,11 +16,28 @@ public class HelloWorld extends Application{
 	@Override
     public void start(Stage primaryStage) {
                 
-        StackPane root = new StackPane();
-        root.getChildren().add(new Label("Alo"));
-        
-        Scene scene = new Scene(root, 300, 250);
-        
+        Pantalla root = new Pantalla();
+        //root.getChildren().add(new Label("Alo"));        
+        Boton b1 = new Boton("black");
+        Boton b2 = new Boton("red");
+        Boton b3 = new Boton("green");
+        b1.agregarObservador(root);
+        b2.agregarObservador(root);
+        b3.agregarObservador(root);
+        root.agregarBoton(b1, 10, 20);      
+        root.agregarBoton(b2, 10, 60);  
+        root.agregarBoton(b3, 10, 100);  
+        b1.getBoton().setOnMouseClicked((e)->{
+        	root.update(b1.getColor());
+        	System.out.print("PRUEBA");
+        });
+        b2.getBoton().setOnMouseClicked((e)->{
+        	root.update(b2.getColor());
+        });
+        b3.getBoton().setOnMouseClicked((e)->{
+        	root.update(b3.getColor());
+        });
+        Scene scene = new Scene(root.getPane(), 300, 250);        
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -1,17 +1,28 @@
 package paquete1;
 
+
+
+import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 public class Pantalla implements Observador{
 
-	private BorderPane pane;
+	private Pane pane;
 	
 	public Pantalla() {
-		pane = new BorderPane();
+		pane = new Pane();
+		
 	}
 	
-	public BorderPane getPane() {
+	public void agregarBoton(Boton b1, int x, int y) {
+		b1.getBoton().setLayoutX(x);
+		b1.getBoton().setLayoutY(y);		
+		pane.getChildren().add(b1.getBoton());		
+		
+	}
+	public Pane getPane() {
 		return this.pane;
 	}
 	

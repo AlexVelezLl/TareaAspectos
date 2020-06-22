@@ -12,8 +12,7 @@ public aspect MyAspect {
 	}
 	
 	//Implementación adicional
-		pointcut beforechange(String x): call(void Observador.update(String)) && args(x);	
-		before(String x): beforechange(x){
+	before(String x): change(x){
 			System.out.println("The color is going to change to: "+x+"\nPlease wait.\n");
 		}
 }

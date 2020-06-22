@@ -33,6 +33,12 @@ public class Pantalla implements Observador{
 	
 	@Override
 	public void update(String color) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		pane.setStyle("-fx-background-color: "+color);
 	}
 

@@ -15,9 +15,10 @@ public class Boton implements SujetoObservable {
 	public Boton(String color) {
 		this.color=color;
 		this.observadores=new ArrayList<Observador>();
-		this.b= new Button(color.toString());
-		
+		this.b= new Button(color);
+		b.setOnAction(e->notificar());
 	}
+	
 	@Override
 	public void notificar() {
 		for (Observador o:observadores) {
@@ -40,7 +41,7 @@ public class Boton implements SujetoObservable {
 	
 	public void setColor(String color) {
 		this.color=color;
-		this.b.setText(color.toString());
+		this.b.setText(color);
 	}
 	
 }

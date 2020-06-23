@@ -33,7 +33,6 @@ public class Pantalla implements Observador{
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		pane.setStyle("-fx-background-color: "+color);
